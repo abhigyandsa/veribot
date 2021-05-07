@@ -1,8 +1,8 @@
-import pandas as pd
-import discord
+import pandas as pd # if this fails, install pandas: pip install pandas
+import discord # if this fails, install discord: pip install discord
 import os
 import re
-from dotenv import load_dotenv
+from dotenv import load_dotenv # if this fails, install dotenv: pip install dotenv
 load_dotenv()
 
 
