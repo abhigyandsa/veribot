@@ -8,12 +8,10 @@ Bot to automatically verify users based on database of ids.
 ````
     git clone git@github.com:abhigyandsa/veribot.git
 ````
-or
+or, if you haven't configured ssh yet:
 ````
     git clone https://github.com/abhigyandsa/veribot.git
 ````
-if you haven't configured ssh yet.
-
 - Create a .env file in the root folder with two variables
     - VERIBOTTOKEN    your discord bot token
     - ROLE			role to assign to a verified user
