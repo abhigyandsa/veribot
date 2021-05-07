@@ -5,7 +5,6 @@ import re
 from dotenv import load_dotenv # if this fails, install dotenv: pip install dotenv
 load_dotenv()
 
-
 def getData(filename, colid):
   sheet = pd.read_excel(filename)
   sheet = sheet.sort_values(colid)
@@ -46,9 +45,6 @@ async def verify(message, role):
         await message.reply('You are now verified!')
     else:
         await message.reply('Sorry! Your ID('+id+') does not match our records.')
-
-
-
 
 async def usage(message):
     await message.reply('This bot helps you get verified!\nUsage: ```$verify 21fxxxxxxx```')
