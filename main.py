@@ -30,6 +30,9 @@ def binsearch(item, list):
 async def createrole(message, role, color=None):
     roles = [ x.name for x in message.author.guild.roles ]
     if role in roles:
+        if color:
+            roleo = discord.utils.get(message.guild.roles, name=role)
+            await roleo.edit(color=color)
         return
     if color:
         await message.author.guild.create_role(name=role, color=color)
@@ -58,7 +61,7 @@ async def verify(message, role):
         await member.add_roles(role)
 
         # creating role for group id and assigning it to user
-        grpid = 'Group ' + str(gridlst[index])
+        grpid = str(gridlst[index])
         random.seed(grpid)
         rancolr = random.randint(0x000000, 0xffffff)
         await createrole(message, grpid, rancolr)
