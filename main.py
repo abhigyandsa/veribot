@@ -4,6 +4,7 @@ import os
 import random
 import re
 from dotenv import load_dotenv # if this fails, install dotenv: pip install dotenv
+from keepalive import keep_alive
 load_dotenv()
 
 def getData(filename,sortid, colid):
@@ -98,4 +99,5 @@ if __name__ == "__main__":
         await usage(message)
     if msglow.startswith('$verify'):
         await verify(message, role)
+  keep_alive()
   client.run(os.getenv('VERIBOTTOKEN'))
