@@ -20,7 +20,7 @@ refer to the .env.sample file for the format of the file
 
 - Install the dependencies
 ````
-    pip install discord pandas dotenv
+    pip install discord pandas dotenv xlrd openpyxl
 ````
 ## Running
 ````
