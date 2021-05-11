@@ -55,17 +55,19 @@ async def verify(message, role):
     id = match.group()
     index = binsearch(id, idlst)
     if index != -1:
-        # creating role verified and assigning it to user
+        # creating role verified
         await createrole(message, role)
         role = discord.utils.get(message.guild.roles, name=role)
-        await member.add_roles(role)
 
-        # creating role for group id and assigning it to user
+        # creating role for group id
         grpid = str(gridlst[index])
         random.seed(grpid)
         rancolr = random.randint(0x000000, 0xffffff)
         await createrole(message, grpid, rancolr)
         grprole = discord.utils.get(message.guild.roles, name=grpid)
+
+        # assign roles
+        await member.add_roles(role)
         await member.add_roles(grprole)
 
         await message.reply('You are now verified!')
